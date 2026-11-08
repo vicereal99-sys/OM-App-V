@@ -1,8 +1,8 @@
 // Change RELEASE for every published package; keep this filename unchanged.
-const RELEASE='12';
+const RELEASE='14.9';
 const PREFIX='om-pwa:'+self.registration.scope+':';
 const CACHE=PREFIX+RELEASE;
-const ASSETS=['index.html','pwa.js?v=12','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png'];
+const ASSETS=['index.html','pwa.js?v=14.9','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png'];
 const url=p=>new URL(p,self.registration.scope).href;
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS.map(p=>new Request(url(p),{cache:'reload'}))))));
 self.addEventListener('message',e=>{if(e.data?.type==='ACTIVATE_UPDATE')self.skipWaiting()});
