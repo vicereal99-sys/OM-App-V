@@ -8,12 +8,12 @@
   if(worker.state==='installed'){if(registration.waiting)offer();else status('Offline-Kopie wird aktiviert …');}
   if(worker.state==='redundant')status('Update konnte nicht vollständig geladen werden. Bitte erneut prüfen.');
  });}
- async function offlineReady(){if(!registration)return;const ready=await caches.has('om-pwa:'+registration.scope+':15.22');el('offlineStatus').classList.toggle('is-ready',ready);el('offlineStatus').textContent=ready?'Offline-Kopie auf diesem Gerät bereit':'Offline-Kopie wird eingerichtet …';}
+ async function offlineReady(){if(!registration)return;const ready=await caches.has('om-pwa:'+registration.scope+':16.17');el('offlineStatus').classList.toggle('is-ready',ready);el('offlineStatus').textContent=ready?'Offline-Kopie auf diesem Gerät bereit':'Offline-Kopie wird eingerichtet …';}
  async function check(manual=false){
   if(!navigator.onLine){status('Du bist offline. Updates können mit Internet geprüft werden.');return;}
   if(!registration){status('Update-Dienst wird noch eingerichtet. Bitte gleich erneut versuchen.');return;}
   if(manual)status('Suche nach Updates …');
-  try{await registration.update();if(registration.waiting)offer();else if(registration.installing)status('Neue Version wird heruntergeladen …');else if(manual)status('Die neueste Version ist bereits installiert (15.22).');}
+  try{await registration.update();if(registration.waiting)offer();else if(registration.installing)status('Neue Version wird heruntergeladen …');else if(manual)status('Die neueste Version ist bereits installiert (16.17).');}
   catch{status('Update-Prüfung fehlgeschlagen. Bitte später erneut versuchen.');}
  }
  el('checkUpdate').onclick=()=>check(true);

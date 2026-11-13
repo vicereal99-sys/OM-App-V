@@ -1,5 +1,5 @@
 // Change RELEASE for every published package; keep this filename unchanged.
-const RELEASE='15.22';
+const RELEASE='16.17';
 const PREFIX='om-pwa:'+self.registration.scope+':';
 const CACHE=PREFIX+RELEASE;
 const ASSETS=['index.html','pwa.js','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png','apple-touch-icon.png'];
